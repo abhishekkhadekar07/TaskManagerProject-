@@ -4,14 +4,13 @@ import { Button } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 const TaskList = () => {
-  const [taskList, setTaskList] = useState([]);
+  const [taskList, setTaskList] = useState(null);
   useEffect(() => {
     setTaskList(JSON.parse(localStorage.getItem('taskList')))
   },[])
 const onDelete=(title)=>{
   console.log('delete')
   const list =taskList.filter((task)=>task.taskTitle!=title);
-
   setTaskList(list);
 }
 const onEdit=()=>{
