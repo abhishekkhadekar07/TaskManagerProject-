@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+}
+.headings{
+    width: 500px;
+}
+.btn{
+    background-color: black;
+    color: #fff;
+}
+.containerForTask{
+    display: flex;
+    position: relative;
+    left: 200px;
+}
