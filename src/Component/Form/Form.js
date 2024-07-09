@@ -1,8 +1,8 @@
 import { Box, Button, Stack, TextField } from '@mui/material';
 import React, { useState } from 'react'
-import styles1 from './TaskManager.module.css'
+import styles1 from './Form.module.css'
 
-const TaskManager = (props) => {
+const Form = (props) => {
     const [taskList, setTaskList] = useState({
         taskTitle: "",
         Description: "",
@@ -92,4 +92,4 @@ const TaskManager = (props) => {
   )
 }
 
-export default TaskManager
+export default Form
