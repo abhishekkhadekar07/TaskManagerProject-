@@ -1,7 +1,7 @@
 import { Box, Button, Stack, TextField } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import styles1 from './Form.module.css';
-
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 const Form = ({ task, handleClose }) => {
   const [taskDetails, setTaskDetails] = useState({
     taskTitle: "",
@@ -87,10 +87,14 @@ const Form = ({ task, handleClose }) => {
             name="chooseEndDate"
             id="chooseEndDate"
           />
+          
+            
           <Stack direction="row" spacing={1}>
             <Button type="submit" variant="contained" color="primary">
               {task ? "Update Task" : "Add Task"}
             </Button>
+
+
             <Button variant="contained" onClick={handleClose}>
               Cancel
             </Button>

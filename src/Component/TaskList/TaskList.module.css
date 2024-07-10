@@ -15,3 +15,51 @@
     position: relative;
     left: 200px;
 }
+.EditForm{
+    position: relative;
+    right: 1000px;
+}
+
+.taskContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+  }
+  
+  .taskCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .taskTitle {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333333;
+  }
+  
+  .taskActions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .editIcon,
+  .deleteIcon {
+    cursor: pointer;
+    color: #6c757d;
+    transition: color 0.2s;
+  }
+  
+  .editIcon:hover {
+    color: #007bff;
+  }
+  
+  .deleteIcon:hover {
+    color: #dc3545;
+  }
+  
