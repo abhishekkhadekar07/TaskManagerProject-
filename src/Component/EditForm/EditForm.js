@@ -1,8 +1,8 @@
-import { Box, Button, Stack, TextField } from '@mui/material';
 import React, { useState, useEffect } from 'react';
-import styles1 from './Form.module.css';
+import { Box, Button, Stack, TextField } from '@mui/material';
+import styles1 from './EditForm.module.css';
 
-const Form = ({ task, onSubmit, handleClose }) => {
+const EditForm = ({ task, onSubmit }) => {
   const [taskDetails, setTaskDetails] = useState({
     taskTitle: "",
     Description: "",
@@ -20,16 +20,12 @@ const Form = ({ task, onSubmit, handleClose }) => {
     e.preventDefault();
     const taskList = JSON.parse(localStorage.getItem("taskList")) || [];
     if (task) {
-      const index = taskList.findIndex((t) => t.taskTitle === task.taskTitle);
-      taskList[index] = taskDetails;
+      onSubmit(taskDetails);
     } else {
       taskList.push(taskDetails);
+      localStorage.setItem("taskList", JSON.stringify(taskList));
     }
-    localStorage.setItem("taskList", JSON.stringify(taskList));
     setTaskDetails({ taskTitle: "", Description: "", selectPriority: "", chooseEndDate: "" });
-    window.location.reload();
-    // if()
-    // onSubmit();
   };
 
   const handleInput = (e) => {
@@ -93,7 +89,7 @@ const Form = ({ task, onSubmit, handleClose }) => {
             <Button type="submit" variant="contained" color="primary">
               {task ? "Update Task" : "Add Task"}
             </Button>
-            <Button variant="contained" onClick={handleClose}>
+            <Button variant="contained" onClick={() => onSubmit(null)}>
               Cancel
             </Button>
           </Stack>
@@ -103,4 +99,4 @@ const Form = ({ task, onSubmit, handleClose }) => {
   );
 };
 
-export default Form;
+export default EditForm;
