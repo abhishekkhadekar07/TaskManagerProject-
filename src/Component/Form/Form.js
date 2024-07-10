@@ -2,7 +2,7 @@ import { Box, Button, Stack, TextField } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import styles1 from './Form.module.css';
 
-const Form = ({ task, onSubmit, handleClose }) => {
+const Form = ({ task, handleClose }) => {
   const [taskDetails, setTaskDetails] = useState({
     taskTitle: "",
     Description: "",
@@ -28,8 +28,6 @@ const Form = ({ task, onSubmit, handleClose }) => {
     localStorage.setItem("taskList", JSON.stringify(taskList));
     setTaskDetails({ taskTitle: "", Description: "", selectPriority: "", chooseEndDate: "" });
     window.location.reload();
-    // if()
-    // onSubmit();
   };
 
   const handleInput = (e) => {

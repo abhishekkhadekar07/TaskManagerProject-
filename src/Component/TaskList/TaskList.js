@@ -65,6 +65,7 @@ const TaskList = () => {
         <h2>Completed</h2>
       </div>
       {editingTask && (
+        
         <Form
           task={editingTask}
           onSubmit={handleFormSubmit}
